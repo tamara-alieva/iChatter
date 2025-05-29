@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChatter - {{ username }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="user-header">
+                <h2>{{ username }}</h2>
+                <a href="/logout" class="logout">Logout</a>
+            </div>
+            
+            <div class="contacts">
+                <h3>Private Chats</h3>
+                <ul id="user-list">
+                    {% for user in users %}
+                    <li data-username="{{ user }}" class="contact">{{ user }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <h3>Group Chats</h3>
+                <div class="group-controls">
+                    <input type="text" id="new-group-name" placeholder="New group name">
+                    <button id="create-group">Create Group</button>
+                </div>
+                <ul id="group-list">
+                    <!-- Groups will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chat-area">
+            <div class="chat-header">
+                <h2 id="chat-title">Select a chat</h2>
+            </div>
+            
+            <div class="messages" id="messages">
+                <!-- Messages will appear here -->
+            </div>
+            
+            <div class="message-input">
+                <input type="text" id="message-input" placeholder="Type a message..." disabled>
+                <button id="send-button" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
