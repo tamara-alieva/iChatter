@@ -1,0 +1,12 @@
+[
+    {
+        "sender": "user",
+        "message": "first message",
+        "timestamp": "2025-05-29 18:46:29"
+    },
+    {
+        "sender": "tamara",
+        "message": "second message",
+        "timestamp": "2025-05-29 18:47:43"
+    }
+]
